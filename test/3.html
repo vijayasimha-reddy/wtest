@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Underline Appears Only on Hover</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .center-underline {
+      position: relative;
+      color: #217dbb;
+      text-decoration: none;
+    }
+
+    .center-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #217dbb;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .center-underline:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="center-underline">Hover me</a>
+</body>
+</html>

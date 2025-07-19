@@ -1,0 +1,265 @@
+body {
+    
+    font-family: Arial, sans-serif;
+    margin-bottom: 1000px;
+    background-color: yellowgreen;
+}
+.box{
+    display: flex;
+    justify-self: start;
+    justify-content: center;
+    margin-left: 500px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+
+ /* Animation 1 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px dotted lightgray;
+    /*border-top: 5px solid #3498db;*/
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+}
+
+ /* Animation 2 */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.rotating-box {
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 2s linear infinite;
+}
+
+/* Animation 3 */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #d1e21b; }
+    50% { text-shadow: 0 0 20px #29adce; }
+    100% { text-shadow: 0 0 5px #ff00ff; }
+}
+.glow {
+    font-size: 28px;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Animation 4 */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
+}
+.wave {
+    font-size: 40px;
+    display: inline-block;
+    animation: wave 1s infinite;
+}
+
+ /* Animation 5 */
+.numbers {
+    display: flex;
+    gap: 20px;
+    font-size: 40px;
+}
+
+
+.numbers span {
+    filter: blur(5px);
+    transition: filter 0.3s ease-in-out;
+}
+
+
+.numbers span:hover {
+    filter: blur(0);
+    cursor: pointer;
+}
+
+ /* Animation 6 */
+.parent{
+    height: 500px;
+    width: 500px;
+    position: relative;
+}
+.animation6 {
+    animation-name: my-animation;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    top: 10px;
+}
+
+@keyframes my-animation {
+    from {
+        background-color: #ff7a59;
+        width: 300px;
+        top: 10px;
+    }
+    to {
+        background-color: #33475b;
+        width: 50px;
+        top: 100px;
+    }
+}
+
+ /* Animation 7 */
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ff5722;
+    border-radius: 0;
+    animation: rotateShape 3s infinite alternate ease-in-out;
+}
+
+@keyframes rotateShape {
+    0% {
+        transform: rotate(0deg);
+        border-radius: 0;
+    }
+    50% {
+        transform: rotate(180deg);
+        border-radius: 50%;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-radius: 0;
+    }
+}
+
+
+ /* Animation 8 */
+.flip-card {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px; /* Creates 3D effect */
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+}
+
+.flip-card-front {
+    background-color: #3498db;
+}
+
+.flip-card-back {
+    background-color: #2ecc71;
+    transform: rotateY(180deg);
+}
+
+ /* Animation 9 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pulse-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4d4d;
+    border-radius: 10px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+
+ /* Animation 10 */
+.door-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.hidden-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.doors {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    top: 0;
+    left: 0;
+}
+
+.door {
+    width: 50%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    transition: transform 1s ease-in-out;
+}
+
+.left-door {
+    left: 0;
+    transform: translateX(0);
+}
+
+.right-door {
+    right: 0;
+    transform: translateX(0);
+}
+
+.door-container:hover .left-door {
+    transform: translateX(-100%);
+}
+
+.door-container:hover .right-door {
+    transform: translateX(100%);
+}
